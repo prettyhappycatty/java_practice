@@ -1,31 +1,121 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "maven"
+apply plugin: "findbugs"
+apply plugin: "pmd"
+apply plugin: "jacoco"
 
-sourceCompatibility = 1.5
-version = '1.0'
-jar {
-    manifest {
-        attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
-    }
+def defaultEncoding = 'UTF-8'
+//[compileJava, compileTestJava]*.options*.encoding = defaultEncoding
+
+[compileJava, compileTestJava].each{
+
+    it.options.encoding = 'UTF-8'
+    it.options.compilerArgs += ['-source', '1.8', '-target', '1.8']
+
 }
 
+group = 'com.mychaelstyle'
+archivesBaseName = 'MyLibs'
+version = '0.1.0'
+
 repositories {
-    mavenCentral()
+  mavenCentral()
+  maven {
+    url 'file:'+System.getenv('HOME')+'/.m2/repository'
+  }  
 }
 
 dependencies {
-    compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
-    testCompile group: 'junit', name: 'junit', version: '4.+'
-}
-
-test {
-    systemProperties 'property': 'value'
+  testCompile "junit:junit:4.11"
+  compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+  runtime fileTree(dir: 'libs', include: '*.jar')
 }
 
 uploadArchives {
-    repositories {
-       flatDir {
-           dirs 'repos'
-       }
+  repositories {
+    mavenDeployer {
+      file(System.getenv('HOME')+'/.m2/repository').mkdirs()
+      repository(url: 'file:'+System.getenv('HOME')+'/.m2/repository')
     }
+  }
 }
+
+jar {
+  manifest {
+    attributes 'Implementation-Title': 'MyLibs', 'Implementation-Version': 0.1
+    attributes "Main-Class" : "com.mychaelstyle.Main"
+  }
+  from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+}
+
+task writePom << {
+  pom {
+    project {
+      inceptionYear '2014'
+      licenses {
+        license {
+          name 'The Apache Software License, Version 2.0'
+          url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+          distribution 'repo'
+        }
+      }
+    }
+  }.writeTo("$projectDir/pom.xml")
+}
+
+findbugs {
+  ignoreFailures = true
+  toolVersion = "3.0.0"
+  sourceSets = [sourceSets.main]
+  reportsDir = file("$project.buildDir/reports/findbugs")
+  effort = "max"
+}
+
+/*
+pmd {
+  ignoreFailures = true
+  toolVersion = '4.3'
+  sourceSets = [sourceSets.main]
+  reportsDir = file("$project.buildDir/reports/pmd")
+  ruleSets = [
+    "java-basic",
+    "java-braces"
+  ]
+}
+*/
+
+// JaCoCo coverage report
+jacoco {
+  applyTo(tasks.withType(JavaExec))
+}
+
+test {
+  jacoco {
+    enabled = true
+    //destPath = 'build/reports/jacoco/jacoco.exec'
+  }
+}
+
+task jacocoReport(type: JacocoReport) {
+  executionData test
+  sourceSets project.sourceSets.main
+}
+
+// checkにCPDを追加
+check << {
+  File outDir = new File('build/reports/pmd/')
+  outDir.mkdirs()
+  ant.taskdef(name: 'cpd', classname: 'net.sourceforge.pmd.cpd.CPDTask',
+    classpath: configurations.pmd.asPath)
+  ant.cpd(minimumTokenCount: '100', format: 'xml',
+    outputFile: new File(outDir , 'cpd.xml')) {
+    fileset(dir: "src/main/java") {
+      include(name: '**/*.java')
+    }
+  }
+}
+// コラボに必須なgradle wrapper
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.1'
+}	
