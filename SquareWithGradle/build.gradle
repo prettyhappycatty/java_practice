@@ -99,9 +99,16 @@ test {
   }
 }
 
+/*
 task jacocoReport(type: JacocoReport) {
   executionData test
   sourceSets project.sourceSets.main
+}
+*/
+
+task applicationCodeCoverageReport(type:JacocoReport){
+    executionData test
+    sourceSets sourceSets.main
 }
 
 // checkにCPDを追加
