@@ -94,6 +94,8 @@ test {
   jacoco {
     enabled = true
     //destPath = 'build/reports/jacoco/jacoco.exec'
+    destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+    classDumpFile = file("$buildDir/jacoco/classpathdumps")
   }
 }
 
@@ -117,5 +119,5 @@ check << {
 }
 // コラボに必須なgradle wrapper
 task wrapper(type: Wrapper) {
-  gradleVersion = '2.1'
+  gradleVersion = '2.2'
 }	
