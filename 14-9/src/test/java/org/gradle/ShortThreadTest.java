@@ -6,6 +6,9 @@ import org.junit.Test;
 
 public class ShortThreadTest {
 
+	/*
+	 * create and check name test.
+	 */
 	@Test
     public void createLongThreadTest(){
 		ThreadGroup tg = new ThreadGroup("thread group");
