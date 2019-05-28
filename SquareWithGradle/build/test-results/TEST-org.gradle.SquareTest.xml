@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.gradle.SquareTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2014-11-11T23:57:53" hostname="kondoumiyuki-no-MacBook-Air.local" time="0.003">
+  <properties/>
+  <testcase name="testSquare" classname="org.gradle.SquareTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,7 @@
+-classpath '/Users/miyuki/Documents/github-repo/java_practice/SquareWithGradle/build/classes/main:/Users/miyuki/Documents/github-repo/java_practice/SquareWithGradle/build/resources/main:/Users/miyuki/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2/f951934aa5ae5a88d7e6dfaa6d32307d834a88be/commons-collections-3.2.jar'
+-d '/Users/miyuki/Documents/github-repo/java_practice/SquareWithGradle/build/docs/javadoc'
+-doctitle 'SquareWithGradle 0.1.0 API'
+-quiet 
+-windowtitle 'SquareWithGradle 0.1.0 API'
+'/Users/miyuki/Documents/github-repo/java_practice/SquareWithGradle/src/main/java/org/gradle/Person.java'
+'/Users/miyuki/Documents/github-repo/java_practice/SquareWithGradle/src/main/java/org/gradle/Square.java'

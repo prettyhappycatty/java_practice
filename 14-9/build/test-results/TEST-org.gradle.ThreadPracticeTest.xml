@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.gradle.ThreadPracticeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2014-11-18T13:22:49" hostname="kondoumiyuki-no-MacBook-Air.local" time="3.034">
+  <properties/>
+  <testcase name="construtorTest" classname="org.gradle.ThreadPracticeTest" time="3.034"/>
+  <system-out><![CDATA[New thread: Thread[One,5,test]
+java.lang.ThreadGroup[name=test,maxpri=10]
+New thread: Thread[Two,5,test]
+New thread: Thread[Three,5,test]
+New thread: Thread[Four,5,test]
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+org.gradle.ConcreteObserver@64eaa38
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,38 @@
+4New thread: Thread[test long thread,5,thread group]
+5New thread: Thread[test short thread,5,thread group]
+3java.lang.ThreadGroup[name=thread group,maxpri=10]
+New thread: Thread[One,5,test]
++java.lang.ThreadGroup[name=test,maxpri=10]
+New thread: Thread[Two,5,test]
+!New thread: Thread[Three,5,test]
+ New thread: Thread[Four,5,test]
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
+$org.gradle.ConcreteObserver@64eaa38
